@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Nav Bar</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+        #header{
+            text-align: center;
+
+        }
+
+        #logo{
+            width: 250px;
+            height: auto;
+            margin: 50px 0;
+        }
+
+        #menu-bar{
+            text-align: center;
+            background-color: tomato;
+        }
+    
+
+        li{
+            display: inline-block;
+            padding: 15px 10px;
+            font-size: 17px;
+            font-weight: 700;
+            color: black;
+        }
+        #container{
+            text-align: center;
+            padding: 50px 100px;
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+
+        }
+
+        p {
+            font-size: 18px;
+        }
+        .sticky{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" id="logo" alt="">
+    </div>
+    <nav id="menu-bar">
+        <li>Home</li>
+        <li>About</li>
+        <li>Service</li>
+        <li>Contact Us</li>
+    </nav>
+    <div id="container">
+        <h1>About Us</h1>
+        <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-M1-Family-02-1:VP4-1399x600" alt="" srcset="">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, cumque nihil. Perferendis ipsum deserunt
+            sint saepe id repellendus accusamus, architecto ea cumque enim minus praesentium omnis delectus. Doloremque
+            quo expedita commodi, totam nostrum non voluptate soluta necessitatibus excepturi, a aut modi neque! Maiores
+            eaque ipsum eum id expedita enim soluta, dolor illum, quasi tempore sequi. Sequi, magni explicabo
+            asperiores, enim aperiam voluptas quos eos et quibusdam aspernatur, totam sed maxime soluta mollitia! Alias
+            expedita, neque dolorum esse debitis tempora hic, voluptate ex cupiditate aliquam dolore numquam! Dolorum
+            perspiciatis aut iusto inventore deleniti corporis, dignissimos quidem commodi. Odit inventore quia eius, ex
+            obcaecati vero praesentium dolorem quam, itaque commodi illum doloribus recusandae rerum totam cum
+            doloremque at aliquam, reprehenderit ipsam? Molestias amet dolorum dignissimos quasi eveniet magnam minus
+            culpa laboriosam esse modi, autem, numquam placeat quam neque impedit hic rem quas sequi vitae. Voluptates
+            eos, ipsam quasi odit officiis impedit facere, eius dolores eveniet, amet voluptatum ex dolore nemo
+            quibusdam laboriosam magnam? Ullam debitis nobis molestiae? Voluptate cumque maiores ipsa iusto voluptates
+            harum vel dolor labore mollitia nulla itaque laudantium nisi quis, aspernatur autem natus blanditiis minima
+            perferendis assumenda aperiam corrupti nihil numquam. Modi voluptates quod atque voluptatibus quisquam rerum
+            ad voluptatem vel eius numquam expedita error reprehenderit earum, reiciendis ipsam veniam, unde blanditiis
+            sapiente accusantium consequatur cumque temporibus eaque! Consequuntur sunt doloremque dignissimos fugiat at
+            ad rerum animi tenetur. Quia, ut. Sed nam deleniti quas itaque modi vel aut, vero voluptatem maxime
+            doloribus nihil. Assumenda minus in sed vero corrupti repudiandae dolorum perspiciatis sit provident!
+            Placeat suscipit beatae eius nemo, similique, veniam recusandae explicabo tempora corporis autem ullam.
+            Error quae maiores blanditiis aspernatur delectus nisi laborum eos tempore illo corporis temporibus
+            quibusdam dolor nesciunt ullam, aliquid illum, laudantium voluptas magnam? Tempore architecto ratione
+            adipisci iusto doloribus eos iure rem vitae, placeat facere illo aut assumenda voluptate aperiam sequi autem
+            voluptates. Corporis cumque perferendis vero. Culpa, quam fuga nam in, autem magni vel earum atque
+            praesentium ratione, obcaecati reprehenderit eveniet illo. Quas libero aliquid sed itaque iure asperiores
+            exercitationem facilis fugiat excepturi, corporis labore repudiandae vitae veniam dicta? Tenetur neque
+            officia sit quibusdam deserunt nobis ipsam ex fugit sequi, voluptatem repudiandae quasi quia eligendi, illum
+            repellendus voluptate dolorem earum voluptates, error inventore. Minus, nobis, reprehenderit, veniam
+            adipisci corporis qui reiciendis possimus quae maiores suscipit ipsa dicta sed in fugit eos saepe facere
+            voluptatibus expedita pariatur enim aliquid iusto necessitatibus eaque repudiandae!</p>
+    </div>
+
+
+</body>
+<script>
+    window.addEventListener("scroll", function(){
+        let navbar = document.getElementById("menu-bar");
+        if (window.pageYOffset >= 190){
+            navbar.classList.add("sticky");           
+        } else{
+            navbar.classList.remove("sticky");
+        }
+    })
+</script>
+
+
+
+<!-- <script>
+    function changeBg(color) {
+        document.body.style.backgroundColor = color;
+        let txt = document.getElementsByClassName("text");
+        if (color == "#000000") {
+            for (let elm of txt) {
+                elm.style.color = "#ffffff";
+            }
+        } else {
+            for (let elm of txt) {
+                elm.style.color = "#000000";
+            }
+        }
+
+
+    }
+
+</script> -->
+<!-- <script src="/Background Color switcher/app.js"></script> -->
+
+
+
+
+</html>

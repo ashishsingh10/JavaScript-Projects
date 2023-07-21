@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Switcher</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 20px 100px;
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .btn {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border: solid grey 2px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        #white {
+            background-color: white;
+        }
+
+        #aqua {
+            background-color: aqua;
+        }
+
+        #violet {
+            background-color: violet;
+        }
+
+        #black {
+            background-color: black;
+        }
+
+        #color-switcher {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="color-switcher">
+        <span class="btn" id="white" onclick="changeBg('#ffffff')"></span>
+        <span class="btn" id="aqua" onclick="changeBg('#00FFFF')"></span>
+        <span class="btn" id="violet" onclick="changeBg('#8F00FF')"></span>
+        <span class="btn" id="black" onclick="changeBg('#000000')"></span>
+    </div>
+    <h1 class="text">Background Color Switcher</h1>
+    <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex vero odit eius sed nisi, non commodi
+        distinctio iure
+        voluptate dolores impedit voluptatem reiciendis ad necessitatibus, eos repellat! Temporibus neque quos
+        repudiandae nisi esse. Hic recusandae eligendi dolores cumque culpa laboriosam doloremque illum reiciendis ad.
+        Beatae molestiae, nemo quo nesciunt praesentium laudantium cupiditate vel error labore illum placeat blanditiis
+        voluptates magni quos iste molestias autem velit commodi. Autem quae excepturi iste commodi? Quisquam error quo
+        laudantium nesciunt in, veritatis quam a ut ab nobis quod beatae adipisci nemo est laboriosam saepe aut,
+        inventore repellendus aliquam enim libero expedita? Sapiente, recusandae voluptates?</p>
+
+
+</body>
+<script>
+    function changeBg(color){
+        document.body.style.backgroundColor = color;
+        let textElemnt = document.getElementsByClassName("text");
+        if (color == "#000000"){
+            for (let txtPart of textElemnt){
+                txtPart.style.color = "#ffffff";
+            }
+        } else {
+            for (let txtPart of textElemnt){
+                txtPart.style.color = "#000000";
+            }
+        }
+    }
+</script>
+
+
+
+<!-- <script>
+    function changeBg(color) {
+        document.body.style.backgroundColor = color;
+        let txt = document.getElementsByClassName("text");
+        if (color == "#000000") {
+            for (let elm of txt) {
+                elm.style.color = "#ffffff";
+            }
+        } else {
+            for (let elm of txt) {
+                elm.style.color = "#000000";
+            }
+        }
+
+
+    }
+
+</script> -->
+<!-- <script src="/Background Color switcher/app.js"></script> -->
+
+
+
+
+</html>
