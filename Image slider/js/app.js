@@ -24,7 +24,6 @@ let goNext = () => {
 let goPrev = () => {
     counter--;
     if(counter < 0){
-        
         counter = slides.length - 1;
     }
     slideImg();
