@@ -20,12 +20,30 @@ const text = [
 ];
 
 const item = document.querySelector('#items');
-const generate = (item) => {
-    if(isNaN(item.value) || item.value < 0 || item.value > 9){
-        let randomText = Math.floor(Math.random() * item);
-        item.innerHTML = `<p> ${item} </p>`
+const data = document.querySelector('#data');
+
+const generate = () => {
+    console.log(item.value);
+    
+    if(item.value <= 0 || item.value > 9 || isNaN(item.value)){
+        const randomIndex = Math.floor(Math.random() * text.length);
+        console.log(randomIndex);        
+        data.innerHTML = `<p> ${text[randomIndex]} </p>`;
+    } else {
+        const dataSet = text.slice(0, item.value);
+        // console.log(dataSet.join(" "));
+        data.innerHTML = `<p> ${dataSet.join(" ")} </p>`;
+
+        const mapKaro = dataSet.map(
+            (d) => {
+                console.log(d);
+                return `<p> ${d} </P>`;
+            }
+        )
+        // console.log(mapKaro.join(" "));
+        data.innerHTML = mapKaro.join("");
     }
-    console.log(randomText);
+    
 }
-// let randomText = Math.floor(Math.random() * item);
-// console.log(randomText);
+
+
