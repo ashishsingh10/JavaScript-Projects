@@ -19,31 +19,20 @@ const text = [
     `Rutters Plate Fleet boom chandler Brethren of the Coast handsomely lookout marooned brigantine knave. Buccaneer gangway jack rum loot spyglass line Jack Tar fore gaff. Gaff topmast scuttle ballast swab draught measured fer yer chains dance the hempen jig Chain Shot yardarm.`,
 ];
 
-const item = document.querySelector('#items');
-const data = document.querySelector('#data');
-
+const item = document.querySelector("#items");
+const data = document.querySelector("#data");
 const generate = () => {
-    console.log(item.value);
-    
-    if(item.value <= 0 || item.value > 9 || isNaN(item.value)){
-        const randomIndex = Math.floor(Math.random() * text.length);
-        console.log(randomIndex);        
-        data.innerHTML = `<p> ${text[randomIndex]} </p>`;
+    if(isNaN(item.value) || item.value <= 0 || item.value > 9){
+        const randomText = Math.floor(Math.random() * 10);        
+        data.innerHTML = `<p> ${text[randomText]} </p>`;
     } else {
-        const dataSet = text.slice(0, item.value);
-        // console.log(dataSet.join(" "));
-        data.innerHTML = `<p> ${dataSet.join(" ")} </p>`;
-
-        const mapKaro = dataSet.map(
-            (d) => {
-                console.log(d);
-                return `<p> ${d} </P>`;
-            }
-        )
-        // console.log(mapKaro.join(" "));
-        data.innerHTML = mapKaro.join("");
+        const dataSlice = text.slice(0, item.value);        
+        
+        const mapData = dataSlice.map(
+            (d) => {                
+                return `<p> ${d} </p>`;                
+            }            
+        )        
+        data.innerHTML = mapData.join("");
     }
-    
 }
-
-
