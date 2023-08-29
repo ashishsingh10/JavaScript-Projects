@@ -23,7 +23,8 @@ const item = document.querySelector("#items");
 const data = document.querySelector("#data");
 const generate = () => {
     if(isNaN(item.value) || item.value <= 0 || item.value > 9){
-        const randomText = Math.floor(Math.random() * 10);        
+        const randomText = Math.floor(Math.random() * 10);
+        console.log(randomText);        
         data.innerHTML = `<p> ${text[randomText]} </p>`;
     } else {
         const dataSlice = text.slice(0, item.value);        
