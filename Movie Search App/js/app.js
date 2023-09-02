@@ -44,21 +44,27 @@ const showMovies = (data) => {
 getMovies(APIURL);
 const searching = document.querySelector("#search");
 
-const searchFun = () =>{
-    if(searching.value != ""){
-        getMovies(searching.value);
-        searching.value += "";
+// const searchFun = () =>{
+//     if(searching.value != ""){
+//         getMovies(searching.value);
+//         searching.value += "";
+//     } 
+//     return false;
+// }
+
+
+
+
+
+
+searching.addEventListener("keyup", function(event){
+    if(event.key != ""){
+        getMovies(event.key);
+        event.key += "";
     } 
-    return false;
-}
+    return ;
 
-
-
-
-
-
-searching.addEventListener("keydown", function(){
-    searchFun();
+    console.log(event);
 
 })
 
