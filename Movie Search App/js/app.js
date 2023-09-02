@@ -47,7 +47,7 @@ const searching = document.querySelector("#search");
 const searchFun = () =>{
     if(searching.value != ""){
         getMovies(searching.value);
-        searching.value = "";
+        searching.value += "";
     } 
     return false;
 }
