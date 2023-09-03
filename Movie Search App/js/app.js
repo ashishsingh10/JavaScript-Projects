@@ -5,7 +5,7 @@ const SEARCHAPI =
     "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
 const movieBox = document.getElementById("movie-box");
-console.log(movieBox);
+// console.log(movieBox);
 const getMovies = async (api) => {
     const response = await fetch(api);
     const data = await response.json();
@@ -15,7 +15,9 @@ const getMovies = async (api) => {
 }
 
 const showMovies = (data) => {
-    console.log(data);
+    // console.log(data);
+    movieBox.innerHTML = "";
+    showMovies.data = "";
     data.forEach ((mov) => {
         // console.log(mov.original_title);
         const boxes = document.createElement("div");
@@ -32,7 +34,7 @@ const showMovies = (data) => {
             <br>
             <b>Released Date: ${mov.release_date}</b>
             
-        </div>;
+        </div>
         `;
         
         movieBox.appendChild(boxes);
@@ -44,27 +46,15 @@ const showMovies = (data) => {
 getMovies(APIURL);
 const searching = document.querySelector("#search");
 
-// const searchFun = () =>{
-//     if(searching.value != ""){
-//         getMovies(searching.value);
-//         searching.value += "";
-//     } 
-//     return false;
-// }
-
-
-
-
-
 
 searching.addEventListener("keyup", function(event){
-    if(event.key != ""){
-        getMovies(event.key);
-        event.key += "";
-    } 
-    return ;
-
-    console.log(event);
+    if(event.target.value != ""){
+        
+        getMovies(SEARCHAPI + event.target.value);
+        
+    } else{
+        getMovies(APIURL);
+    }
 
 })
 
